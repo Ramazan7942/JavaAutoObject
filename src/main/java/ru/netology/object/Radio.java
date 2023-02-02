@@ -1,42 +1,62 @@
 package ru.netology.object;
 
 public class Radio {
-    public int radioStationNumber;
-    public int soundVolume;
 
-    public void nextChangeStation(int newChangeStation) {
-        if (newChangeStation < 9) {
-            radioStationNumber = newChangeStation + 1;
-        }
-        if (newChangeStation > 9) {
-            radioStationNumber = 0;
-        }
+    private int radio;
+    private int soundVolume;
+
+    public int getRadNum() {
+
+        return radio;
     }
 
-    public void prevChangeStation(int newChangeStation) {
-        if (newChangeStation < 0) {
-            radioStationNumber = 9;
+    public void setRadNum(int radio) {
+        if (radio < 0) {
+            return;
         }
-        if (newChangeStation > 0) {
-            radioStationNumber = newChangeStation - 1;
+        if (radio > 9) {
+            return;
         }
+        this.radio = radio;
     }
 
-    public void plusIncreaseVolume(int newIncreaseVolume) {
-        if (newIncreaseVolume < 10) {
-            soundVolume = newIncreaseVolume + 1;
+    public void nextChangeStation() {
+        if (radio < 9) {
+            radio = radio + 1;
+        } else
+            radio = 0;
+    }
+
+    public void prevChangeStation() {
+        if (radio <= 0) {
+            radio = 9;
+        } else
+            radio = radio - 1;
+    }
+
+    public int getSoundVolume() {
+        return soundVolume;
+    }
+
+    public void setSoundVolume(int soundVolume) {
+        if (soundVolume < 0) {
+            return;
         }
-        if (newIncreaseVolume > 10) {
+        if (soundVolume > 10) {
             soundVolume = 10;
         }
+        this.soundVolume = soundVolume;
     }
 
-    public void minusIncreaseVolume(int newIncreaseVolume) {
-        if (newIncreaseVolume < 0) {
-            soundVolume = 0;
+    public void plusIncreaseVolume() {
+        if (soundVolume < 10) {
+            soundVolume = soundVolume + 1;
         }
-        if (newIncreaseVolume > 0) {
-            soundVolume = newIncreaseVolume - 1;
+    }
+
+    public void minusIncreaseVolume() {
+        if (soundVolume > 0) {
+            soundVolume = soundVolume - 1;
         }
     }
 }
