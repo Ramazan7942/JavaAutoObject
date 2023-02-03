@@ -38,8 +38,8 @@ class RadioTest {
         rad.setRadNum(10);
         rad.nextChangeStation();
 
-        int expected = 0;
-        int actual = rad.getSoundVolume();
+        int expected = 1;
+        int actual = rad.getRadNum();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -82,6 +82,7 @@ class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
 
     @Test
     public void SoundVolume() {

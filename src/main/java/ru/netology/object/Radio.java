@@ -17,6 +17,7 @@ public class Radio {
         if (radio > 9) {
             return;
         }
+
         this.radio = radio;
     }
 
