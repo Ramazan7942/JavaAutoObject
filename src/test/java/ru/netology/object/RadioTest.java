@@ -3,7 +3,7 @@ package ru.netology.object;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class RadiomanTest {
+class RadioTest {
     Radio radio = new Radio();
 
 
